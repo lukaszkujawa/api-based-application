@@ -1,0 +1,41 @@
+html {
+	margin: 0;
+	padding: 1em;
+}
+
+* {
+	font-family: Arial, sans-serif;
+}
+
+h2 {
+	font-size: 12px;
+}
+
+h5 {
+	font-size: 10px;
+	color: #999;
+}
+
+#navigation ul {
+	list-style: none;
+	padding: 0 0 0 1em;
+	height: 2.25em;
+	background: #333;
+}
+
+#navigation li {
+	float: left;
+	margin-right: 1em;
+}
+
+#navigation a {
+	color: #999;
+	text-decoration: none;
+	padding: 0.5em 0 0 0;
+	display: block;
+	text-transform: uppercase;
+}
+
+#navigation a.active {
+	color: #FFF;
+}
