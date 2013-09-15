@@ -13,12 +13,17 @@ define([
       
       // Default - catch all
       '*actions': 'defaultAction'
-    }
+    },
+    
+    instance: null
+    
   });
 
+  
   var initialize = function ( options ) {
 	  
     var appView = options.appView;
+    
     var router = new AppRouter(options);
     
     router.on('route:create', function () {
@@ -39,10 +44,14 @@ define([
       });
     });
     
+    AppRouter.instance = router;
+    
     Backbone.history.start();
     
   };
+  
   return {
     initialize: initialize,
+    AppRouter: AppRouter
   };
 });

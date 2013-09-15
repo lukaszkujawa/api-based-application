@@ -2,6 +2,8 @@
 
 require '../vendor/autoload.php';
 
+session_start();
+
 $app = new \Slim\Slim();
 
 $app->config(array(
@@ -25,12 +27,23 @@ $app->get('/link/latest', function () use ($app) {
 				
 	));
 	
+	if( isset( $_SESSION['data'] ) ) {
+		$data['links'] = array_merge( $_SESSION['data'], $data['links'] );
+	}
+	
     echo json_encode( $data );
 });
 
 $app->post('/link/submit', function () use ($app) {
+	if( ! isset( $_SESSION['data'] ) ) {
+		$_SESSION['data'] = array();
+	}
+	$data = json_decode(file_get_contents('php://input'));
+
+	$_SESSION['data'][] = array( 'url' => $data->url, 
+								 'title' => $data->title );
 	
-	echo json_encode( array('status' => 1) );
+	echo json_encode($_SESSION['data']);
 });
 
 $app->get('/', function() use ($app) {

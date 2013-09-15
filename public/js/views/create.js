@@ -43,9 +43,7 @@ define([
     		success: function () {
     			console.log( "submitted" );
     			
-    			$(form).find("input.text").val( '' );
-    			$(form).hide();
-    			$('#thankYou').show();
+    			Router.AppRouter.instance.navigate( '/', true );
     		}
     	});
     	
