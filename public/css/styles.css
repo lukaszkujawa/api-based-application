@@ -39,3 +39,24 @@ h5 {
 #navigation a.active {
 	color: #FFF;
 }
+
+form label {
+	display: block;
+	width: 200px;
+	text-transform: capitalize;
+}
+
+form label:after {
+	content: ":";
+}
+
+form input.text {
+	width: 100%;
+	margin: 0.25em 0 0.5em 0;
+	font-size: 14px;
+	padding: 0.25em;
+}
+
+.hidden {
+	display: none;
+}

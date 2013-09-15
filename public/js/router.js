@@ -22,20 +22,20 @@ define([
     var router = new AppRouter(options);
     
     router.on('route:create', function () {
-        require(['controllers/CreateController'], function (CreateController) {
+        require(['views/create'], function (CreateView) {
           console.log( "router::create" );
         	
-          var createController = Vm.create(appView, 'CreateController', CreateController);
-          createController.render();
+          var createView = Vm.create(appView, 'CreateView', CreateView);
+          createView.render();
         });
     });
     
     router.on('route:defaultAction', function (actions) {
-      require(['controllers/IndexController'], function (IndexController) {
+      require(['views/index'], function (IndexView) {
         console.log( "router::defaultAction" );
         
-        var indexController = Vm.create(appView, 'IndexController', IndexController);
-        //indexController.render();
+        var indexView = Vm.create(appView, 'IndexView', IndexView);
+        // indexView.render();
       });
     });
     
@@ -43,6 +43,6 @@ define([
     
   };
   return {
-    initialize: initialize
+    initialize: initialize,
   };
 });

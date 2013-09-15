@@ -22,7 +22,7 @@ require.config({
 // Let's kick off the application
 
 require([
-  'app',
+  'views/app',
   'router',
   'vm'
 ], function(AppView, Router, Vm){

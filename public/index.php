@@ -28,6 +28,11 @@ $app->get('/link/latest', function () use ($app) {
     echo json_encode( $data );
 });
 
+$app->post('/link/submit', function () use ($app) {
+	
+	echo json_encode( array('status' => 1) );
+});
+
 $app->get('/', function() use ($app) {
     $app->render('index.php');
 });

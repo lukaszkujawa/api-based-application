@@ -23,9 +23,9 @@ define([
 	      
 	    	$(this.el).html( layoutTemplate );
 	      
-	    	require(['controllers/NavController'], function (NavController) {
-	    		var navController = Vm.create(that, 'NavController', NavController);
-	    		navController.render();
+	    	require(['views/nav'], function (NavView) {
+	    		var nav = Vm.create(that, 'NavView', NavView);
+	    		nav.render();
 	    	});
 	    }
     
