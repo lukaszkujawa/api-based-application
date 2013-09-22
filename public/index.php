@@ -28,7 +28,7 @@ $app->get('/link/latest', function () use ($app) {
 	));
 	
 	if( isset( $_SESSION['data'] ) ) {
-		$data['links'] = array_merge( $_SESSION['data'], $data['links'] );
+		$data['links'] = array_merge( array_reverse( $_SESSION['data'] ), $data['links'] );
 	}
 	
     echo json_encode( $data );

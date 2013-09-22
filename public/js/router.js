@@ -8,7 +8,6 @@ define([
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Pages
-      'add': 'add',
       'create': 'create',
       
       // Default - catch all
