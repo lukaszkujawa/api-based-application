@@ -6,14 +6,14 @@ define([
   'text!templates/index/index.html'
 ], function( $, _, Backbone, LinksModel, indexTemplate ){
 	
-  var IndexController = Backbone.View.extend({
+  var IndexView = Backbone.View.extend({
     
 	el: '.content',
     
     model: new LinksModel(),
 	
     initialize: function() {
-    	console.log( "controllers/IndexController::initialize()" );
+    	console.log( "controllers/IndexView::initialize()" );
     	
     	var context = this;
     	
@@ -35,6 +35,6 @@ define([
     
   });
   
-  return IndexController;
+  return IndexView;
   
 });

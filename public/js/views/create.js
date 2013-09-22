@@ -6,7 +6,7 @@ define([
   'text!templates/create/index.html'
 ], function($, Backbone, LinkModel, Router, indexTemplate){
 	
-  var CreateController = Backbone.View.extend({
+  var CreateView = Backbone.View.extend({
     
 	el: '.content',
 	
@@ -21,7 +21,7 @@ define([
     },
     
     render: function () {
-    	console.log( "controllers/CreateController::render()" );
+    	console.log( "controllers/CreateView::render()" );
     	console.log( indexTemplate );
     	
     	this.$el.html ( indexTemplate );
@@ -52,6 +52,6 @@ define([
     
   });
   
-  return CreateController;
+  return CreateView;
   
 });
